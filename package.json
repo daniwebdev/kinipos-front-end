@@ -1,5 +1,6 @@
 {
   "name": "@coreui/coreui-free-angular-admin-template",
+  "main": "main.js",
   "version": "2.5.2",
   "description": "CoreUI Free Angular 2+ Admin Template",
   "author": {
@@ -43,6 +44,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "core-js": "^2.6.9",
+    "electron": "^6.0.2",
     "flag-icon-css": "^3.3.0",
     "font-awesome": "^4.7.0",
     "moment": "^2.24.0",

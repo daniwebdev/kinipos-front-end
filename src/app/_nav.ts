@@ -33,6 +33,57 @@ export const navItems: NavData[] = [
   {
     name: 'Dashboard',
     url: '/dashboard',
+    icon: 'icon-speedometer'
+  },
+  {
+    name: 'Kasir',
+    url: '/kasir',
+    icon: 'cui-monitor'
+  },
+  {
+    name: 'Produk',
+    url: '/barang',
+    icon: 'icon-grid',
+    children: [
+      {
+        name: 'Master Barang',
+        url: '/barang/master-barang',
+        icon: 'icon-puzzle',
+      },
+      {
+        name: 'Persediaan',
+        url: '/barang/persediaan',
+        icon: 'icon-puzzle'
+      }
+    ]
+  },
+  {
+    name: 'Penjualan',
+    url: '/penjualan',
+    icon: 'icon-badge'
+  },
+  {
+    name: 'Pembelian',
+    url: '/pembelian',
+    icon: 'icon-calculator'
+  },
+  {
+    name: 'Laporan',
+    url: '/laporan',
+    icon: 'icon-doc'
+  },
+  {
+    name: 'Developers (Team)',
+    url: '/about',
+    icon: 'icon-people'
+  }
+]
+
+
+export const navItems_old: NavData[] = [
+  {
+    name: 'Dashboard',
+    url: '/dashboard',
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',

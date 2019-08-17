@@ -8,12 +8,25 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { KasirComponent } from './kasir/kasir.component';
+
+
+const KasirApp = [
+  {
+    path: 'barang',
+    loadChildren: () => import('./master-barang/master-barang.module').then( m=> m.MasterBarangModule)
+  }
+]
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
+  },
+  {
+    path: 'kasir',
+    loadChildren: () => import('./kasir/kasir.module').then(m => m.KasirModule)
   },
   {
     path: '404',
@@ -50,6 +63,7 @@ export const routes: Routes = [
       title: 'Home'
     },
     children: [
+      ...KasirApp,
       {
         path: 'base',
         loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
