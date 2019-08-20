@@ -20,6 +20,7 @@ export class KasirComponent implements OnInit {
   qtys         = [1,2,3,4,5,6];
 
   qty_selected = 1;
+  total_harga  = 0;
 
   constructor() { }
 
@@ -51,6 +52,11 @@ export class KasirComponent implements OnInit {
       produk: barcode,
       qty: this.qty_selected
     });
+
+    //hitung total harga
+    this.items.forEach(item => {
+      this.total_harga += item.harga
+    })
     
     this.barcodeElement.nativeElement.value = ''
   }

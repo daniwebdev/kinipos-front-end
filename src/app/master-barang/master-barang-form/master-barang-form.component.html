@@ -8,17 +8,22 @@
               <form [formGroup] = "form" class="form-row">
                   <div class="form-group col-6">
                     <label for="nama-barang">Nama Barang</label>
-                    <input formControlName="nama_barang" type="text" class="form-control" name="nama_barang" id="nama-barang" aria-describedby="helpId" placeholder="">
+                    <input autocomplete="off" formControlName="nama_barang" type="text" class="form-control" name="nama_barang" id="nama-barang" aria-describedby="helpId" placeholder="">
                     <small id="helpId" class="form-text text-muted">Help text</small>
                   </div>
                   <div class="form-group col-6">
                     <label for="nama-barang">Kode Barang</label>
-                    <input formControlName="kode_barang" type="text" class="form-control" name="nama_barang" id="nama-barang" aria-describedby="helpId" placeholder="">
+                    <input autocomplete="off" formControlName="kode_barang" type="text" class="form-control" name="nama_barang" id="nama-barang" aria-describedby="helpId" placeholder="">
+                    <small id="helpId" class="form-text text-muted">Help text</small>
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="brand">Brand</label>
+                    <input autocomplete="off" formControlName="brand" type="text" class="form-control" name="nama_barang" id="brand" aria-describedby="helpId" placeholder="">
                     <small id="helpId" class="form-text text-muted">Help text</small>
                   </div>
                   <div class="form-group col-6">
                     <label for="nama-barang">Satuan</label>
-                    <input formControlName="satuan" type="text" class="form-control" name="nama_barang" id="nama-barang" aria-describedby="helpId" placeholder="">
+                    <input autocomplete="off" formControlName="satuan" type="text" class="form-control" name="nama_barang" id="nama-barang" aria-describedby="helpId" placeholder="">
                     <small id="helpId" class="form-text text-muted">Help text</small>
                   </div>
               </form>

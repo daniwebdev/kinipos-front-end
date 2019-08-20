@@ -11,7 +11,7 @@
                                 <th scope="col">QTY</th>
                                 <th scope="col" class="text-right">Harga Satuan</th>
                                 <th scope="col" class="text-right">Subtotal</th>
-                                <th scope="col" class="text-center">Action</th>
+                                <th scope="col" class="text-center" style="width: 50px"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,7 +26,7 @@
                                 </td>
                                 <td class="text-right" style="vertical-align: middle">{{item.harga | number}}</td>
                                 <td class="text-right" style="vertical-align: middle">{{item.harga*item.qty | number}}</td>
-                                <td style="vertical-align: middle" class="text-center">
+                                <td style="vertical-align: middle; width: 50px" class="text-center">
                                     <button class="btn btn-danger btn-sm" (click)="rmItem(i)"><i class="icon-trash"></i></button>
                                 </td>
                             </tr>
@@ -76,14 +76,51 @@
                             </li>
                             <li class="list-group-item">
                                 <span class="float-left">Total Harga</span>
-                                <span class="float-right"></span>
+                                <span class="float-right">{{total_harga | currency:'Rp. '}}</span>
                                 <div class="clearfix"></div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary btn-block">Bayar</button>
+            <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalPembayaran">Bayar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalPembayaran" tabindex="-1" role="dialog" aria-labelledby="modalPembayaranTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalPembayaranTitle">Pembayaran</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="uang-tunai">Uang Tunai :</label>
+              <input type="text"
+                class="form-control" name="uang-tunai" id="uang-tunai" aria-describedby="helpId" placeholder="Rp.">
+              <small id="helpId" class="form-text text-muted">Masukan nilai yang dibayar.</small>
+            </div>
+            <div class="form-group">
+              <label for="billing">Yang harus dibayar :</label>
+              <input type="text" readonly
+                value="{{total_harga | currency:'Rp. '}}"
+                class="form-control" name="billing" id="billing" aria-describedby="helpId" placeholder="Rp.">
+            </div>
+            <div class="form-group">
+              <label for="change">Kembalian :</label>
+              <input type="text" readonly
+                class="form-control" name="change" id="change" aria-describedby="helpId" placeholder="Rp.">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Proses</button>
+        </div>
         </div>
     </div>
 </div>

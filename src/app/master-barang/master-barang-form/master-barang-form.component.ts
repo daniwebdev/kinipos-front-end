@@ -13,7 +13,8 @@ export class MasterBarangFormComponent implements OnInit {
   form = new FormGroup({
     nama_barang: new FormControl(''),
     satuan: new FormControl(''),
-    kode_barang: new FormControl('')
+    kode_barang: new FormControl(''),
+    brand: new FormControl('')
   })
 
   constructor(private router: Router) { }
